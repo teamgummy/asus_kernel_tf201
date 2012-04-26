@@ -3336,6 +3336,14 @@ static struct clk tegra_pll_u = {
 };
 
 static struct clk_pll_freq_table tegra_pll_x_freq_table[] = {
+
+	/* 1.8 GHz */
+	{ 12000000, 1800000000, 850,  6,  1, 8},
+	{ 13000000, 1800000000, 915,  7,  1, 8},	/* actual: 1799.2 MHz */
+	{ 16800000, 1800000000, 708,  7,  1, 8},	/* actual: 1799.2 MHz */
+	{ 19200000, 1800000000, 885,  10, 1, 8},	/* actual: 1799.2 MHz */
+	{ 26000000, 1800000000, 850,  13, 1, 8},
+
 	/* 1.7 GHz */
 	{ 12000000, 1700000000, 850,  6,  1, 8},
 	{ 13000000, 1700000000, 915,  7,  1, 8},	/* actual: 1699.2 MHz */
@@ -3401,14 +3409,14 @@ static struct clk tegra_pll_x = {
 	.ops       = &tegra_pll_ops,
 	.reg       = 0xe0,
 	.parent    = &tegra_pll_ref,
-	.max_rate  = 1700000000,
+	.max_rate  = 1800000000,
 	.u.pll = {
 		.input_min = 2000000,
 		.input_max = 31000000,
 		.cf_min    = 1000000,
 		.cf_max    = 6000000,
 		.vco_min   = 20000000,
-		.vco_max   = 1700000000,
+		.vco_max   = 1800000000,
 		.freq_table = tegra_pll_x_freq_table,
 		.lock_delay = 300,
 	},

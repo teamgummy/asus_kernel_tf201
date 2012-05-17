@@ -461,7 +461,7 @@ config ASUS_EDP_POLICY
 
 config ASUS_OVERCLOCK_MODES
 	bool "Use ASUS OC performance modes"
-	default n
+	default y
 	help
 		When enabled, the kernel will use the 3 Asus performance modes.
 		When disabled, the kernel will behave like a stock kernel for
